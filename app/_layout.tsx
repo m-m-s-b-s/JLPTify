@@ -4,6 +4,7 @@ import { Slot, router } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
+import { Analytics } from '@vercel/analytics/react';
 
 import { useColorScheme } from '@/hooks/use-color-scheme';
 
@@ -36,6 +37,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Slot />
       <StatusBar style="auto" />
+      <Analytics />
     </ThemeProvider>
   );
 }
